@@ -4,10 +4,13 @@
             font-family: 'Roboto', sans-serif;
             font-size: 16px;
             line-height: 1.5;
+            min-height: 100vh;
             color: rgb(255, 255, 255);
             background-color: hsl(226, 43%, 10%);
             display: flex;
             justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
         }
         
         img {
@@ -36,6 +39,7 @@
         #container {
             display: flex;
             flex-direction: row;
+            flex-wrap: wrap;
             padding: 0;
             margin: 0;
             border: 1px solid rgb(103, 0, 221);
@@ -434,6 +438,7 @@
         @media (max-width: 565px) {
             #container {
                 width: 100vw;
+                align-items: center;
                 flex-direction: column;
             }
             #tracking {
@@ -455,6 +460,9 @@
             ul {
                 display: flex;
                 flex-direction: row;
+            }
+            body {
+                flex-wrap: wrap;
             }
         }
         
