@@ -13,22 +13,36 @@
             flex-wrap: wrap;
         }
         
+        h1 {
+            font-size: 2.4rem;
+            font-weight: 300;
+            margin: 0;
+            padding: 0;
+        }
+        
+        h3 {
+            font-size: 1rem;
+            font-weight: 300;
+            margin: 0;
+            padding: 2rem 0 0 0;
+        }
+        
         h2 {
             font-size: 2em;
             font-weight: 400;
             margin: 0rem;
-            padding: 1rem 1rem 2.4rem 1rem;
+            padding: 1rem 1rem 1.2rem 1rem;
         }
         
-        time {
-            font-size: 1.9em;
-            font-weight: 400;
-            margin: 0rem;
-            padding: 0rem 0rem 0.5rem 0rem;
+        p {
+            font-size: 3.2em;
+            font-weight: 300;
         }
         
+        p,
         span {
-            font-size: 1rem;
+            padding: 0rem 1rem 0rem 1rem;
+            margin: 0 2rem;
         }
         
         img {
@@ -72,6 +86,8 @@
             background: hsl(246, 80%, 60%);
             position: relative;
             top: 35px;
+            max-height: 240px;
+            width: 200px;
             border-radius: 5%;
             align-items: center;
             margin-top: 20px;
@@ -366,6 +382,10 @@
             #profile {
                 display: flex;
                 flex-direction: row;
+                width: 340px;
+            }
+            #report {
+                padding-left: 51px;
             }
             ul {
                 display: flex;
@@ -374,13 +394,42 @@
             body {
                 flex-wrap: wrap;
             }
-        }
-        
-        @media (min-width: 565px) {
-            .nav-button {
+            #nav-button {
                 display: flex;
                 flex-direction: row;
             }
+            #section1,
+            #section2,
+            #section3 {
+                border: 0px white solid;
+            }
+            #play {
+                top: -80px
+            }
+            .icon-play {
+                top: -30px;
+            }
+            #social {
+                top: -120px
+            }
+            .icon-social {
+                top: -70px;
+            }
+            #study {
+                top: -160px
+            }
+            .icon-study {
+                top: -110px;
+            }
+            #care {
+                top: -200px
+            }
+            .icon-care {
+                top: -150px;
+            }
+        }
+        
+        @media (min-width: 565px) {
             .icon-work {
                 width: 300px;
             }
