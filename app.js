@@ -13,7 +13,9 @@ const selfCarePrevious = document.querySelector('[data-self-care-previous-time]'
 const daily = document.querySelector('[data-daily-tracker]');
 const weekly = document.querySelector('[data-weekly-tracker]');
 const monthly = document.querySelector('[data-monthly-tracker]');
-
+const dailyButton = document.querySelector('[data-daily-drop-down-button]');
+const weeklyButton = document.querySelector('[data-weekly-drop-down-button]');
+const monthlyButton = document.querySelector('[data-monthly-drop-down-button]');
 
 function weeklyFetch() {
     fetch('data.json')
