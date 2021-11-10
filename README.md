@@ -1,5 +1,5 @@
 ## Table of contents
-
+*still has some issues will work on them soon*
 - [Overview](#overview)
   - [The challenge](#the-challenge)
   - [Screenshot](#screenshot)
