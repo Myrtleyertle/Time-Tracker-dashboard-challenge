@@ -24,9 +24,6 @@ let study = [];
 let social = [];
 let selfCare = [];
 
-
-
-
 function weeklyFetch() {
     fetch('data.json')
         .then(response => response.json())
@@ -87,9 +84,6 @@ function dailyFetch() {
 
         })
 }
-
-
-
 
 daily.addEventListener('click', dailyFetch);
 weekly.addEventListener('click', weeklyFetch);
