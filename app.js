@@ -17,53 +17,32 @@ const dailyButton = document.querySelector('[data-daily-drop-down-button]');
 const weeklyButton = document.querySelector('[data-weekly-drop-down-button]');
 const monthlyButton = document.querySelector('[data-monthly-drop-down-button]');
 
+let work = [];
+let play = [];
+let exercise = [];
+let study = [];
+let social = [];
+let selfCare = [];
+
+
+
+
 function weeklyFetch() {
     fetch('data.json')
         .then(response => response.json())
         .then(data => {
-            console.log(data)
-            const workArr = data.slice(0, 1, 3);
-            const playArr = data.slice(1, 2, 3);
-            const exerciseArr = data.slice(3, 4, 3);
-            const studyArr = data.slice(2, 3, 3);
-            const socialArr = data.slice(4, 5, 3);
-            const selfCareArr = data.slice(5, 6, 3);
-            for (data of workArr) {
-                const workCurrentTime = data.timeframes.weekly.current;
-                const workPreviousTime = data.timeframes.weekly.previous;
-                workCurrent.innerHTML = `${workCurrentTime}hrs`;
-                workPrevious.innerHTML = `Last week-${workPreviousTime}hrs`;
-            }
-            for (data of playArr) {
-                const playCurrentTime = data.timeframes.weekly.current;
-                const playPreviousTime = data.timeframes.weekly.previous;
-                playCurrent.innerHTML = `${playCurrentTime}hrs`;
-                playPrevious.innerHTML = `Last week-${playPreviousTime}hrs`;
-            }
-            for (data of exerciseArr) {
-                const exerciseCurrentTime = data.timeframes.weekly.current;
-                const exercisePreviousTime = data.timeframes.weekly.previous;
-                exerciseCurrent.innerHTML = `${exerciseCurrentTime}hrs`;
-                exercisePrevious.innerHTML = `Last week-${exercisePreviousTime}hrs`;
-            }
-            for (data of studyArr) {
-                const studyCurrentTime = data.timeframes.weekly.current;
-                const studyPreviousTime = data.timeframes.weekly.previous;
-                studyCurrent.innerHTML = `${studyCurrentTime}hrs`;
-                studyPrevious.innerHTML = `Last week-${studyPreviousTime}hrs`;
-            }
-            for (data of socialArr) {
-                const socialCurrentTime = data.timeframes.weekly.current;
-                const socialPreviousTime = data.timeframes.weekly.previous;
-                socialCurrent.innerHTML = `${socialCurrentTime}hrs`;
-                socialPrevious.innerHTML = `Last week-${socialPreviousTime}hrs`;
-            }
-            for (data of selfCareArr) {
-                const selfCareCurrentTime = data.timeframes.weekly.current;
-                const selfCarePreviousTime = data.timeframes.weekly.previous;
-                selfCareCurrent.innerHTML = `${selfCareCurrentTime}hrs`;
-                selfCarePrevious.innerHTML = `Last week-${selfCarePreviousTime}hrs`;
-            }
+            workCurrent.innerHTML = `${data[0].timeframes.weekly.current}hrs`;
+            workPrevious.innerHTML = `Last week-${data[0].timeframes.weekly.previous}hrs`;
+            playCurrent.innerHTML = `${data[1].timeframes.weekly.current}hrs`;
+            playPrevious.innerHTML = `Last week-${data[1].timeframes.weekly.previous}hrs`;
+            exerciseCurrent.innerHTML = `${data[2].timeframes.weekly.current}hrs`;
+            exercisePrevious.innerHTML = `Last week-${data[2].timeframes.weekly.previous}hrs`;
+            studyCurrent.innerHTML = `${data[3].timeframes.weekly.current}hrs`;
+            studyPrevious.innerHTML = `Last week-${data[3].timeframes.weekly.previous}hrs`;
+            socialCurrent.innerHTML = `${data[4].timeframes.weekly.current}hrs`;
+            socialPrevious.innerHTML = `Last week-${data[4].timeframes.weekly.previous}hrs`;
+            selfCareCurrent.innerHTML = `${data[5].timeframes.weekly.current}hrs`;
+            selfCarePrevious.innerHTML = `Last week-${data[5].timeframes.weekly.previous}hrs`;
         })
 
     .catch(error => console.log(error));
@@ -73,49 +52,19 @@ function monthlyFetch() {
     fetch('data.json')
         .then(response => response.json())
         .then(data => {
+            workCurrent.innerHTML = `${data[0].timeframes.monthly.current}hrs`;
+            workPrevious.innerHTML = `Last month-${data[0].timeframes.monthly.previous}hrs`;
+            playCurrent.innerHTML = `${data[1].timeframes.monthly.current}hrs`;
+            playPrevious.innerHTML = `Last month-${data[1].timeframes.monthly.previous}hrs`;
+            exerciseCurrent.innerHTML = `${data[2].timeframes.monthly.current}hrs`;
+            exercisePrevious.innerHTML = `Last month-${data[2].timeframes.monthly.previous}hrs`;
+            studyCurrent.innerHTML = `${data[3].timeframes.monthly.current}hrs`;
+            studyPrevious.innerHTML = `Last month-${data[3].timeframes.monthly.previous}hrs`;
+            socialCurrent.innerHTML = `${data[4].timeframes.monthly.current}hrs`;
+            socialPrevious.innerHTML = `Last month-${data[4].timeframes.monthly.previous}hrs`;
+            selfCareCurrent.innerHTML = `${data[5].timeframes.monthly.current}hrs`;
+            selfCarePrevious.innerHTML = `Last month-${data[5].timeframes.monthly.previous}hrs`;
 
-            const workArr = data.slice(0, 1, 3);
-            const playArr = data.slice(1, 2, 3);
-            const exerciseArr = data.slice(3, 4, 3);
-            const studyArr = data.slice(2, 3, 3);
-            const socialArr = data.slice(4, 5, 3);
-            const selfCareArr = data.slice(5, 6, 3);
-            for (data of workArr) {
-                const workCurrentTime = data.timeframes.monthly.current;
-                const workPreviousTime = data.timeframes.monthly.previous;
-                workCurrent.innerHTML = `${workCurrentTime}hrs`;
-                workPrevious.innerHTML = `Last month-${workPreviousTime}hrs`;
-            }
-            for (data of playArr) {
-                const playCurrentTime = data.timeframes.monthly.current;
-                const playPreviousTime = data.timeframes.monthly.previous;
-                playCurrent.innerHTML = `${playCurrentTime}hrs`;
-                playPrevious.innerHTML = `Last month-${playPreviousTime}hrs`;
-            }
-            for (data of exerciseArr) {
-                const exerciseCurrentTime = data.timeframes.monthly.current;
-                const exercisePreviousTime = data.timeframes.monthly.previous;
-                exerciseCurrent.innerHTML = `${exerciseCurrentTime}hrs`;
-                exercisePrevious.innerHTML = `Last month-${exercisePreviousTime}hrs`;
-            }
-            for (data of studyArr) {
-                const studyCurrentTime = data.timeframes.monthly.current;
-                const studyPreviousTime = data.timeframes.monthly.previous;
-                studyCurrent.innerHTML = `${studyCurrentTime}hrs`;
-                studyPrevious.innerHTML = `Last month-${studyPreviousTime}hrs`;
-            }
-            for (data of socialArr) {
-                const socialCurrentTime = data.timeframes.monthly.current;
-                const socialPreviousTime = data.timeframes.monthly.previous;
-                socialCurrent.innerHTML = `${socialCurrentTime}hrs`;
-                socialPrevious.innerHTML = `Last month-${socialPreviousTime}hrs`;
-            }
-            for (data of selfCareArr) {
-                const selfCareCurrentTime = data.timeframes.monthly.current;
-                const selfCarePreviousTime = data.timeframes.monthly.previous;
-                selfCareCurrent.innerHTML = `${selfCareCurrentTime}hrs`;
-                selfCarePrevious.innerHTML = `Last month-${selfCarePreviousTime}hrs`;
-            }
         })
 }
 
@@ -123,50 +72,22 @@ function dailyFetch() {
     fetch('data.json')
         .then(response => response.json())
         .then(data => {
-            const workArr = data.slice(0, 1, 3);
-            const playArr = data.slice(1, 2, 3);
-            const exerciseArr = data.slice(3, 4, 3);
-            const studyArr = data.slice(2, 3, 3);
-            const socialArr = data.slice(4, 5, 3);
-            const selfCareArr = data.slice(5, 6, 3);
-            for (data of workArr) {
-                const workCurrentTime = data.timeframes.daily.current;
-                const workPreviousTime = data.timeframes.daily.previous;
-                workCurrent.innerHTML = `${workCurrentTime}hrs`;
-                workPrevious.innerHTML = `Yesterday-${workPreviousTime}hrs`;
-            }
-            for (data of playArr) {
-                const playCurrentTime = data.timeframes.daily.current;
-                const playPreviousTime = data.timeframes.daily.previous;
-                playCurrent.innerHTML = `${playCurrentTime}hrs`;
-                playPrevious.innerHTML = `Yesterday-${playPreviousTime}hrs`;
-            }
-            for (data of exerciseArr) {
-                const exerciseCurrentTime = data.timeframes.daily.current;
-                const exercisePreviousTime = data.timeframes.daily.previous;
-                exerciseCurrent.innerHTML = `${exerciseCurrentTime}hrs`;
-                exercisePrevious.innerHTML = `Yesterday-${exercisePreviousTime}hrs`;
-            }
-            for (data of studyArr) {
-                const studyCurrentTime = data.timeframes.daily.current;
-                const studyPreviousTime = data.timeframes.daily.previous;
-                studyCurrent.innerHTML = `${studyCurrentTime}hrs`;
-                studyPrevious.innerHTML = `Yesterday-${studyPreviousTime}hrs`;
-            }
-            for (data of socialArr) {
-                const socialCurrentTime = data.timeframes.daily.current;
-                const socialPreviousTime = data.timeframes.daily.previous;
-                socialCurrent.innerHTML = `${socialCurrentTime}hrs`;
-                socialPrevious.innerHTML = `Yesterday-${socialPreviousTime}hrs`;
-            }
-            for (data of selfCareArr) {
-                const selfCareCurrentTime = data.timeframes.daily.current;
-                const selfCarePreviousTime = data.timeframes.daily.previous;
-                selfCareCurrent.innerHTML = `${selfCareCurrentTime}hrs`;
-                selfCarePrevious.innerHTML = `Yesterday-${selfCarePreviousTime}hrs`;
-            }
+            workCurrent.innerHTML = `${data[0].timeframes.daily.current}hrs`;
+            workPrevious.innerHTML = `Last day-${data[0].timeframes.daily.previous}hrs`;
+            playCurrent.innerHTML = `${data[1].timeframes.daily.current}hrs`;
+            playPrevious.innerHTML = `Last day-${data[1].timeframes.daily.previous}hrs`;
+            exerciseCurrent.innerHTML = `${data[2].timeframes.daily.current}hrs`;
+            exercisePrevious.innerHTML = `Last day-${data[2].timeframes.daily.previous}hrs`;
+            studyCurrent.innerHTML = `${data[3].timeframes.daily.current}hrs`;
+            studyPrevious.innerHTML = `Last day-${data[3].timeframes.daily.previous}hrs`;
+            socialCurrent.innerHTML = `${data[4].timeframes.daily.current}hrs`;
+            socialPrevious.innerHTML = `Last day-${data[4].timeframes.daily.previous}hrs`;
+            selfCareCurrent.innerHTML = `${data[5].timeframes.daily.current}hrs`;
+            selfCarePrevious.innerHTML = `Last day-${data[5].timeframes.daily.previous}hrs`;
+
         })
 }
+
 
 
 
