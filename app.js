@@ -17,6 +17,10 @@ const dailyButton = document.querySelector('[data-daily-drop-down-button]');
 const weeklyButton = document.querySelector('[data-weekly-drop-down-button]');
 const monthlyButton = document.querySelector('[data-monthly-drop-down-button]');
 
+fetch('data.json')
+    .then(response => response.json())
+    .then(data => console.log(data))
+
 let work = [];
 let play = [];
 let exercise = [];
